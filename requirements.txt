@@ -1,12 +1,25 @@
-pymysql
-dbutils
-schedule
-configparser
-gate-api
-utils
-numpy
-cryptography
-pyinstaller
-requests
-matplotlib
-mplfinance
+# API related
+gate-api==4.83.0
+requests==2.31.0
+
+# Database related
+pymysql==1.1.0
+dbutils==3.1.0
+sqlalchemy==2.0.23
+
+# Data processing and analysis
+numpy==1.26.4
+pandas==2.2.1
+matplotlib==3.8.3
+mplfinance==0.12.10b0
+
+# Tools and scheduling
+schedule==1.2.1
+python-dotenv==1.0.0
+configparser==6.0.0
+
+# Security
+cryptography==42.0.5
+
+# Packaging
+pyinstaller==6.4.0
