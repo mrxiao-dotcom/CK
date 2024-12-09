@@ -1,0 +1,12 @@
+pymysql
+dbutils
+schedule
+configparser
+gate-api
+utils
+numpy
+cryptography
+pyinstaller
+requests
+matplotlib
+mplfinance
