@@ -1,0 +1,15 @@
+# 基础依赖
+pymysql>=1.1.0
+requests>=2.31.0
+DBUtils>=3.0.3
+
+# API相关
+gate-api>=4.0.0
+
+# 日志和工具
+python-dateutil>=2.8.2
+pytz>=2023.3
+
+# 可选依赖（如果需要）
+pandas>=2.0.0  # 用于数据处理
+numpy>=1.24.0  # 用于数学计算 

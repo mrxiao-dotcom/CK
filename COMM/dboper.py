@@ -607,7 +607,7 @@ class MyDBConn:
 
     def UpdateBuyerStatusGateio(self,acct_id):
         try:
-            #up ���加仓，对应 l，down是减仓，对应u
+            # up 是加仓，对应 l，down 是减仓，对应 u
             sqlstr = "update acct_stg_buyer_gateio set init = 1 where acct_id = %d " % (acct_id)
             self.ms.ExecNonQuery(sqlstr)
 
@@ -1364,7 +1364,7 @@ class MyDBConn:
 
     def UpdateWatchApp(self, app_name):
         """
-        更新应用运行状态，如果记录不存在则创建新记录
+        更新应用运行状态，果记录不存在则创建新记录
         """
         try:
             # 首先检查记录是否存在
@@ -1491,4 +1491,93 @@ class MyDBConn:
         except Exception as e:
             print(f"UpdateWatchAppBack error: {str(e)}")
             raise e
+
+    def InsertTradeRecord(self, trade_record):
+        """
+        插入交易记录
+        :param trade_record: 字典格式的交易记录
+        """
+        try:
+            # 构建 SQL 语句
+            sql = """
+                INSERT INTO trade_records_gate 
+                (acct_id, symbol, side, size, price, leverage, trade_time, 
+                 order_id, trade_value, fee, remark)
+                VALUES 
+                (%d, '%s', '%s', %f, %f, %d, '%s', '%s', %f, %f, '%s')
+            """
+            
+            # 格式化 SQL 语句
+            formatted_sql = sql % (
+                trade_record['acct_id'],
+                trade_record['symbol'],
+                trade_record['side'],
+                trade_record['size'],
+                trade_record['price'],
+                trade_record['leverage'],
+                trade_record['trade_time'].strftime('%Y-%m-%d %H:%M:%S'),
+                trade_record['order_id'],
+                trade_record['trade_value'],
+                trade_record['fee'],
+                trade_record['remark']
+            )
+            
+            self.ms.ExecNonQuery(formatted_sql)
+
+        except Exception as e:
+            print(f"插入交易记录失败: {str(e)}")
+            self.ExceptionThrow(e)
+
+    def QueryTradeRecords(self, acct_id=None, start_time=None, end_time=None):
+        """
+        查询交易记录
+        """
+        try:
+            conditions = []
+            params = []
+            
+            sql = """
+                SELECT trade_time, symbol, side, size, price, leverage, 
+                       order_id, trade_value, fee, remark
+                FROM trade_records_gate
+                WHERE 1=1
+            """
+            
+            if acct_id:
+                conditions.append(f"AND acct_id = {acct_id}")
+                
+            if start_time:
+                conditions.append(f"AND trade_time >= '{start_time.strftime('%Y-%m-%d %H:%M:%S')}'")
+                
+            if end_time:
+                conditions.append(f"AND trade_time <= '{end_time.strftime('%Y-%m-%d %H:%M:%S')}'")
+                
+            sql += " ".join(conditions)
+            sql += " ORDER BY trade_time DESC"
+            
+            result = self.ms.ExecQuery(sql)
+            
+            # 转换为字典列表
+            records = []
+            for row in result:
+                record = {
+                    'trade_time': row[0],
+                    'symbol': row[1],
+                    'side': row[2],
+                    'size': float(row[3]),
+                    'price': float(row[4]),
+                    'leverage': int(row[5]),
+                    'order_id': row[6],
+                    'trade_value': float(row[7]),
+                    'fee': float(row[8]),
+                    'remark': row[9]
+                }
+                records.append(record)
+                
+            return records
+            
+        except Exception as e:
+            print(f"查询交易记录失败: {str(e)}")
+            self.ExceptionThrow(e)
+            return []
 

@@ -1,0 +1,445 @@
+2025-02-08 17:00:01,064 - QuotesService - INFO - === 行情服务启动 ===
+2025-02-08 17:00:01,064 - QuotesService - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:00:01,065 - QuotesService - INFO - Python路径: ['D:\\pythonProject\\CK\\new_proj\\src\\gui', 'D:\\pythonProject\\CK\\new_proj\\src\\utils', 'D:\\pythonProject\\CK\\new_proj\\src\\database', 'D:\\pythonProject\\CK\\new_proj\\src\\core', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:00:01,066 - QuotesService - ERROR - 行情服务运行异常: 'gbk' codec can't decode byte 0xae in position 23: illegal multibyte sequence
+Traceback (most recent call last):
+  File "D:\pythonProject\CK\new_proj\src\quotes_service.py", line 39, in run_quotes_service
+    quotes_manager = QuotesManager()
+  File "D:\pythonProject\CK\new_proj\src\core\quotes_manager.py", line 26, in __init__
+    self.market_data = MarketDataManager()
+  File "D:\pythonProject\CK\new_proj\src\core\market_data.py", line 25, in __init__
+    self.server = self.config.server
+  File "D:\pythonProject\CK\new_proj\src\utils\config_manager.py", line 54, in server
+    'is_main': self.config.read_info("api", "quotesisserver") == '1',
+  File "D:\pythonProject\CK\BASECLASS\configfile.py", line 15, in read_info
+    conn.read(file_path)
+  File "D:\Python310\lib\configparser.py", line 698, in read
+    self._read(fp, filename)
+  File "D:\Python310\lib\configparser.py", line 1021, in _read
+    for lineno, line in enumerate(fp, start=1):
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 23: illegal multibyte sequence
+2025-02-08 17:04:58,333 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:04:58,334 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:04:58,334 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:04:58,334 - QuotesService - [quotes_service.py:36] - ERROR - 行情服务运行异常 - 文件: D:\pythonProject\CK\new_proj\src\quotes_service.py 行号: 58 - FileNotFoundError: [Errno 2] No such file or directory: 'gate_config.ini'
+2025-02-08 17:07:58,967 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:07:58,967 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:07:58,967 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:07:58,968 - QuotesService - [quotes_service.py:36] - ERROR - 行情服务运行异常 - 文件: D:\pythonProject\CK\new_proj\src\quotes_service.py 行号: 58 - ValueError: invalid literal for int() with base 10: '300          ; 超时时间（秒）'
+2025-02-08 17:08:58,974 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:08:58,974 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:08:58,974 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:08:58,975 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:08:58,975 - core.quotes_manager - [quotes_manager.py:38] - INFO - 启动行情服务...
+2025-02-08 17:08:58,975 - core.quotes_manager - [quotes_manager.py:94] - ERROR - 检查运行状态失败: 数据库连接未初始化
+2025-02-08 17:08:58,975 - core.quotes_manager - [quotes_manager.py:42] - INFO - 当前不允许运行，等待下一次检查...
+2025-02-08 17:08:58,975 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:09:41,083 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:09:42,732 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:09:42,732 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:09:42,732 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:09:42,733 - database.db_connector - [db_connector.py:24] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:09:43,734 - database.db_connector - [db_connector.py:35] - ERROR - 数据库初始化失败: (2003, "Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)")
+2025-02-08 17:09:43,734 - core.quotes_manager - [quotes_manager.py:35] - ERROR - 数据库初始化失败
+2025-02-08 17:09:43,734 - QuotesService - [quotes_service.py:36] - ERROR - 行情服务运行异常 - 文件: D:\pythonProject\CK\new_proj\src\quotes_service.py 行号: 58 - RuntimeError: 数据库初始化失败
+2025-02-08 17:13:06,329 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:13:06,329 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:13:06,329 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:13:06,330 - database.db_connector - [db_connector.py:26] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:13:06,560 - database.db_connector - [db_connector.py:46] - INFO - 数据库连接初始化成功
+2025-02-08 17:13:06,560 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:13:06,560 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:13:06,596 - core.quotes_manager - [quotes_manager.py:101] - ERROR - 检查运行状态失败: 'Connection' object has no attribute 'UpdateWatchApp'
+2025-02-08 17:13:06,596 - core.quotes_manager - [quotes_manager.py:47] - INFO - 当前不允许运行，等待下一次检查...
+2025-02-08 17:13:06,596 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:14:04,866 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:14:06,479 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:14:06,479 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:14:06,479 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:14:06,480 - database.db_connector - [db_connector.py:27] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:14:06,723 - database.db_connector - [db_connector.py:47] - INFO - 数据库连接初始化成功
+2025-02-08 17:14:06,723 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:14:06,723 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:14:06,761 - core.quotes_manager - [quotes_manager.py:101] - ERROR - 检查运行状态失败: 'Connection' object has no attribute 'UpdateWatchApp'
+2025-02-08 17:14:06,761 - core.quotes_manager - [quotes_manager.py:47] - INFO - 当前不允许运行，等待下一次检查...
+2025-02-08 17:14:06,761 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:14:14,007 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:15:17,186 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:15:17,186 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:15:17,186 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:15:17,187 - database.db_connector - [db_connector.py:27] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:15:17,986 - database.db_connector - [db_connector.py:47] - INFO - 数据库连接初始化成功
+2025-02-08 17:15:17,987 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:15:17,987 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:15:18,218 - database.db_connector - [db_connector.py:27] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:15:18,443 - database.db_connector - [db_connector.py:47] - INFO - 数据库连接初始化成功
+2025-02-08 17:15:18,479 - core.market_data - [log_helper.py:22] - ERROR - 交易所API初始化失败 - 文件: D:\pythonProject\CK\new_proj\src\core\market_data.py 行号: 53 - AttributeError: 'Connection' object has no attribute 'QueryGateAcctInfoByID'
+2025-02-08 17:15:18,479 - core.market_data - [log_helper.py:22] - ERROR - 市场数据管理器初始化失败 - 文件: D:\pythonProject\CK\new_proj\src\core\market_data.py 行号: 40 - RuntimeError: 交易所API初始化失败
+2025-02-08 17:15:18,479 - core.quotes_manager - [quotes_manager.py:113] - ERROR - 初始化资源失败: 市场数据管理器初始化失败
+2025-02-08 17:15:18,479 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:17:14,875 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:18:45,968 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:18:45,969 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:18:45,969 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:18:45,969 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:18:45,970 - database.db_connector - [db_connector.py:60] - ERROR - 数据库初始化失败: Connection.__init__() got an unexpected keyword argument 'pool_size'
+2025-02-08 17:18:45,970 - core.quotes_manager - [quotes_manager.py:35] - ERROR - 数据库初始化失败
+2025-02-08 17:18:45,970 - QuotesService - [quotes_service.py:36] - ERROR - 行情服务运行异常 - 文件: D:\pythonProject\CK\new_proj\src\quotes_service.py 行号: 58 - RuntimeError: 数据库初始化失败
+2025-02-08 17:20:34,921 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:20:34,922 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:20:34,922 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:20:34,922 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:20:35,170 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:20:35,171 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:20:35,171 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:20:35,295 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:20:35,534 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:20:35,535 - core.market_data - [market_data.py:47] - INFO - 交易所API初始化成功
+2025-02-08 17:20:35,536 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:20:36,259 - core.quotes_manager - [quotes_manager.py:123] - INFO - 行情装载与策略运算工作完成...30M后启动下一次
+2025-02-08 17:21:01,276 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:28:41,332 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:28:41,332 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:28:41,332 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:28:41,333 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:28:41,576 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:28:41,576 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:28:41,576 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:28:41,702 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:28:41,953 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:28:41,953 - core.market_data - [market_data.py:48] - INFO - 交易所API初始化成功
+2025-02-08 17:28:41,955 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:28:42,617 - core.market_data - [market_data.py:199] - INFO - 开始检查 597 个品种的数据状态
+2025-02-08 17:28:42,700 - database.db_connector - [db_connector.py:77] - ERROR - 查询执行失败: (1146, "Table 'autotrader.price_30m_gateio' doesn't exist")
+SQL: 
+                SELECT MAX(kline_time) 
+                FROM price_30m_gateio 
+                WHERE symbol = %s
+            
+2025-02-08 17:28:42,700 - database.db_connector - [db_connector.py:197] - ERROR - 查询最新K线时间失败: (1146, "Table 'autotrader.price_30m_gateio' doesn't exist")
+2025-02-08 17:28:42,700 - core.market_data - [market_data.py:110] - INFO - 1CAT 无历史数据，将从 2024-02-09 16:30:00 开始补充
+2025-02-08 17:28:42,700 - core.market_data - [market_data.py:208] - INFO - [1] 开始处理 1CAT
+2025-02-08 17:28:42,700 - core.market_data - [market_data.py:234] - INFO - 开始补充 1CAT 历史数据，时间范围: 2024-02-09 16:30:00 -> 2025-02-08 16:30:00
+2025-02-08 17:28:42,700 - core.market_data - [market_data.py:235] - INFO - 预计分 9 批处理，每批约 2000 条记录
+2025-02-08 17:28:42,758 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': '2bba4fe5-dd16-4e98-a70a-3c8f124b7237', 'Traceparent': '00-67a723d25c81c9ee301054186d793981-d4c35c877f483245-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '199', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006930', 'X-Out-Time': '1739006930500017', 'X-Gate-Trace-ID': '67a723d25c81c9ee301054186d793981', 'X-In-Time': '1739006930499093'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:43,813 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:51 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': 'd4bf21b3-94ae-4f46-bf13-27a358aceec8', 'Traceparent': '00-67a723d3423b38e3346dbe29cbc10f67-b0e4fb40eda23368-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '198', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006931', 'X-Out-Time': '1739006931557823', 'X-Gate-Trace-ID': '67a723d3423b38e3346dbe29cbc10f67', 'X-In-Time': '1739006931556741'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:44,869 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:52 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': 'c60550e5-dd16-4e98-a70a-3c8f124b7237', 'Traceparent': '00-67a723d43f819ffedd00031598f2aae7-67169e4e0e3c980b-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '197', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006932', 'X-Out-Time': '1739006932616214', 'X-Gate-Trace-ID': '67a723d43f819ffedd00031598f2aae7', 'X-In-Time': '1739006932615377'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:45,926 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:53 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': 'ba0322b3-94ae-4f46-bf13-27a358aceec8', 'Traceparent': '00-67a723d52f3a391abc4a000867116575-be90b9da689559b3-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '196', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006933', 'X-Out-Time': '1739006933674964', 'X-Gate-Trace-ID': '67a723d52f3a391abc4a000867116575', 'X-In-Time': '1739006933674131'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:46,981 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:54 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': '732922b3-94ae-4f46-bf13-27a358aceec8', 'Traceparent': '00-67a723d620b9ca802c54da15f21cda8d-645233a03a462271-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '195', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006934', 'X-Out-Time': '1739006934732754', 'X-Gate-Trace-ID': '67a723d620b9ca802c54da15f21cda8d', 'X-In-Time': '1739006934732042'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:48,037 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': '146d50e5-dd16-4e98-a70a-3c8f124b7237', 'Traceparent': '00-67a723d7819e2a66e8979245696590f5-39e32a576f55c492-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '194', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006935', 'X-Out-Time': '1739006935790979', 'X-Gate-Trace-ID': '67a723d7819e2a66e8979245696590f5', 'X-In-Time': '1739006935789937'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:49,093 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:56 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': '276a22b3-94ae-4f46-bf13-27a358aceec8', 'Traceparent': '00-67a723d8eeee9b3f21fd79ea74eae2a4-4a8d4bba2654740f-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '193', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006936', 'X-Out-Time': '1739006936848788', 'X-Gate-Trace-ID': '67a723d8eeee9b3f21fd79ea74eae2a4', 'X-In-Time': '1739006936847993'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:50,148 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:57 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': '7ab250e5-dd16-4e98-a70a-3c8f124b7237', 'Traceparent': '00-67a723d9ed2625fe184678849fa54370-d9a6114dc4ff0c17-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '192', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006937', 'X-Out-Time': '1739006937906913', 'X-Gate-Trace-ID': '67a723d9ed2625fe184678849fa54370', 'X-In-Time': '1739006937905809'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:51,206 - core.market_data - [market_data.py:158] - ERROR - 获取 1CAT K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:58 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': '5da722b3-94ae-4f46-bf13-27a358aceec8', 'Traceparent': '00-67a723da862b4049e46858e93a88bd6e-a60530ab187684d8-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '191', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006938', 'X-Out-Time': '1739006938966217', 'X-Gate-Trace-ID': '67a723da862b4049e46858e93a88bd6e', 'X-In-Time': '1739006938964971'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:51,206 - core.market_data - [market_data.py:264] - INFO - 完成 1CAT 历史数据补充，共 0 条记录
+2025-02-08 17:28:51,566 - database.db_connector - [db_connector.py:77] - ERROR - 查询执行失败: (1146, "Table 'autotrader.price_30m_gateio' doesn't exist")
+SQL: 
+                SELECT MAX(kline_time) 
+                FROM price_30m_gateio 
+                WHERE symbol = %s
+            
+2025-02-08 17:28:51,566 - database.db_connector - [db_connector.py:197] - ERROR - 查询最新K线时间失败: (1146, "Table 'autotrader.price_30m_gateio' doesn't exist")
+2025-02-08 17:28:51,566 - core.market_data - [market_data.py:110] - INFO - 1DOLLAR 无历史数据，将从 2024-02-09 16:30:00 开始补充
+2025-02-08 17:28:51,566 - core.market_data - [market_data.py:208] - INFO - [2] 开始处理 1DOLLAR
+2025-02-08 17:28:51,566 - core.market_data - [market_data.py:234] - INFO - 开始补充 1DOLLAR 历史数据，时间范围: 2024-02-09 16:30:00 -> 2025-02-08 16:30:00
+2025-02-08 17:28:51,566 - core.market_data - [market_data.py:235] - INFO - 预计分 9 批处理，每批约 2000 条记录
+2025-02-08 17:28:51,624 - core.market_data - [market_data.py:158] - ERROR - 获取 1DOLLAR K线数据失败: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Sat, 08 Feb 2025 09:28:59 GMT', 'Content-Type': 'application/json', 'Content-Length': '153', 'Connection': 'keep-alive', 'Server': 'openresty', 'X-Request-Id': 'dcb922b3-94ae-4f46-bf13-27a358aceec8', 'Traceparent': '00-67a723db6ca30e8aa60b44e08a651d92-51b18057e4211698-01', 'X-Response-Source': 'new', 'X-Gate-RateLimit-Requests-Remain': '190', 'X-Gate-RateLimit-Limit': '200', 'X-Gate-RateLimit-Reset-Timestamp': '1739006939', 'X-Out-Time': '1739006939385455', 'X-Gate-Trace-ID': '67a723db6ca30e8aa60b44e08a651d92', 'X-In-Time': '1739006939384280'})
+HTTP response body: {"label":"INVALID_PARAM_VALUE","message":"Invalid request parameter `limit` value: 2000, `limit` and `from` and `to` cannot be present at the same time"}
+
+2025-02-08 17:28:52,275 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:34:52,916 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:34:52,917 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:34:52,917 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:34:52,917 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:34:53,951 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:34:53,951 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:34:53,951 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:34:54,070 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:34:54,314 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:34:54,314 - core.market_data - [market_data.py:48] - INFO - 交易所API初始化成功
+2025-02-08 17:34:54,315 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:34:56,240 - core.market_data - [market_data.py:201] - INFO - 开始检查 597 个品种的数据状态
+2025-02-08 17:34:56,592 - database.db_connector - [db_connector.py:77] - ERROR - 查询执行失败: (1146, "Table 'autotrader.gate_price_30m' doesn't exist")
+SQL: 
+                SELECT MAX(kline_time) 
+                FROM gate_price_30m  # 修改表名
+                WHERE symbol = %s
+            
+2025-02-08 17:34:56,592 - database.db_connector - [db_connector.py:197] - ERROR - 查询最新K线时间失败: (1146, "Table 'autotrader.gate_price_30m' doesn't exist")
+2025-02-08 17:34:56,592 - core.market_data - [market_data.py:110] - INFO - 1CAT 无历史数据，将从 2024-02-09 17:00:00 开始补充
+2025-02-08 17:34:56,592 - core.market_data - [market_data.py:210] - INFO - [1] 开始处理 1CAT
+2025-02-08 17:34:56,592 - core.market_data - [market_data.py:237] - INFO - 开始补充 1CAT 历史数据，时间范围: 2024-02-09 17:00:00 -> 2025-02-08 17:00:00
+2025-02-08 17:34:56,592 - core.market_data - [market_data.py:238] - INFO - 预计分 9 批处理，每批最多2000条记录
+2025-02-08 17:34:57,592 - core.market_data - [market_data.py:160] - ERROR - 获取 1CAT K线数据失败: 'FuturesCandlestick' object is not subscriptable
+2025-02-08 17:34:59,341 - core.market_data - [market_data.py:160] - ERROR - 获取 1CAT K线数据失败: 'FuturesCandlestick' object is not subscriptable
+2025-02-08 17:35:01,794 - core.market_data - [market_data.py:160] - ERROR - 获取 1CAT K线数据失败: 'FuturesCandlestick' object is not subscriptable
+2025-02-08 17:35:03,711 - core.market_data - [market_data.py:160] - ERROR - 获取 1CAT K线数据失败: 'FuturesCandlestick' object is not subscriptable
+2025-02-08 17:35:05,942 - core.market_data - [market_data.py:160] - ERROR - 获取 1CAT K线数据失败: 'FuturesCandlestick' object is not subscriptable
+2025-02-08 17:35:08,505 - core.market_data - [market_data.py:160] - ERROR - 获取 1CAT K线数据失败: 'FuturesCandlestick' object is not subscriptable
+2025-02-08 17:35:09,320 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:37:21,204 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:37:21,204 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:37:21,204 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:37:21,205 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:37:21,445 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:37:21,445 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:37:21,445 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:37:21,830 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:37:22,063 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:37:22,063 - core.market_data - [market_data.py:48] - INFO - 交易所API初始化成功
+2025-02-08 17:37:22,064 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:37:22,841 - core.market_data - [market_data.py:213] - INFO - 开始检查 597 个品种的数据状态
+2025-02-08 17:37:22,940 - database.db_connector - [db_connector.py:77] - ERROR - 查询执行失败: (1054, "Unknown column 'kline_time' in 'field list'")
+SQL: 
+                SELECT MAX(kline_time) 
+                FROM gate_price_30m  # 修改表名
+                WHERE symbol = %s
+            
+2025-02-08 17:37:22,940 - database.db_connector - [db_connector.py:197] - ERROR - 查询最新K线时间失败: (1054, "Unknown column 'kline_time' in 'field list'")
+2025-02-08 17:37:22,940 - core.market_data - [market_data.py:110] - INFO - 1CAT 无历史数据，将从 2024-02-09 17:00:00 开始补充
+2025-02-08 17:37:22,940 - core.market_data - [market_data.py:222] - INFO - [1] 开始处理 1CAT
+2025-02-08 17:37:22,940 - core.market_data - [market_data.py:249] - INFO - 开始补充 1CAT 历史数据，时间范围: 2024-02-09 17:00:00 -> 2025-02-08 17:00:00
+2025-02-08 17:37:22,940 - core.market_data - [market_data.py:250] - INFO - 预计分 9 批处理，每批最多2000条记录
+2025-02-08 17:37:23,188 - core.market_data - [market_data.py:264] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:37:23,267 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1054, "Unknown column 'symbol' in 'field list'")
+SQL: 
+                INSERT INTO gate_price_30m (  # 修改表名
+                    symbol, kline_time, open_price, high_price, 
+                    low_price, close_price, volume
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    open_price = VALUES(open_price),
+                    high_price = VALUES(high_price),
+                    low_price = VALUES(low_price),
+                    close_price = VALUES(close_price),
+                    volume = VALUES(volume)
+            
+2025-02-08 17:37:23,305 - database.db_connector - [db_connector.py:227] - ERROR - 插入K线数据失败: (1054, "Unknown column 'symbol' in 'field list'")
+2025-02-08 17:37:23,305 - core.market_data - [market_data.py:274] - INFO - 补充 1CAT 进度: 11.1% (1/9批), 已处理 2000 条记录
+2025-02-08 17:37:24,675 - core.market_data - [market_data.py:264] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:37:24,753 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1054, "Unknown column 'symbol' in 'field list'")
+SQL: 
+                INSERT INTO gate_price_30m (  # 修改表名
+                    symbol, kline_time, open_price, high_price, 
+                    low_price, close_price, volume
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    open_price = VALUES(open_price),
+                    high_price = VALUES(high_price),
+                    low_price = VALUES(low_price),
+                    close_price = VALUES(close_price),
+                    volume = VALUES(volume)
+            
+2025-02-08 17:37:24,791 - database.db_connector - [db_connector.py:227] - ERROR - 插入K线数据失败: (1054, "Unknown column 'symbol' in 'field list'")
+2025-02-08 17:37:24,791 - core.market_data - [market_data.py:274] - INFO - 补充 1CAT 进度: 22.2% (2/9批), 已处理 4000 条记录
+2025-02-08 17:37:26,157 - core.market_data - [market_data.py:264] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:37:26,236 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1054, "Unknown column 'symbol' in 'field list'")
+SQL: 
+                INSERT INTO gate_price_30m (  # 修改表名
+                    symbol, kline_time, open_price, high_price, 
+                    low_price, close_price, volume
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    open_price = VALUES(open_price),
+                    high_price = VALUES(high_price),
+                    low_price = VALUES(low_price),
+                    close_price = VALUES(close_price),
+                    volume = VALUES(volume)
+            
+2025-02-08 17:37:26,275 - database.db_connector - [db_connector.py:227] - ERROR - 插入K线数据失败: (1054, "Unknown column 'symbol' in 'field list'")
+2025-02-08 17:37:26,275 - core.market_data - [market_data.py:274] - INFO - 补充 1CAT 进度: 33.3% (3/9批), 已处理 6000 条记录
+2025-02-08 17:37:27,678 - core.market_data - [market_data.py:264] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:37:27,757 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1054, "Unknown column 'symbol' in 'field list'")
+SQL: 
+                INSERT INTO gate_price_30m (  # 修改表名
+                    symbol, kline_time, open_price, high_price, 
+                    low_price, close_price, volume
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    open_price = VALUES(open_price),
+                    high_price = VALUES(high_price),
+                    low_price = VALUES(low_price),
+                    close_price = VALUES(close_price),
+                    volume = VALUES(volume)
+            
+2025-02-08 17:37:27,797 - database.db_connector - [db_connector.py:227] - ERROR - 插入K线数据失败: (1054, "Unknown column 'symbol' in 'field list'")
+2025-02-08 17:37:27,797 - core.market_data - [market_data.py:274] - INFO - 补充 1CAT 进度: 44.4% (4/9批), 已处理 8000 条记录
+2025-02-08 17:37:29,156 - core.market_data - [market_data.py:264] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:37:29,235 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1054, "Unknown column 'symbol' in 'field list'")
+SQL: 
+                INSERT INTO gate_price_30m (  # 修改表名
+                    symbol, kline_time, open_price, high_price, 
+                    low_price, close_price, volume
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    open_price = VALUES(open_price),
+                    high_price = VALUES(high_price),
+                    low_price = VALUES(low_price),
+                    close_price = VALUES(close_price),
+                    volume = VALUES(volume)
+            
+2025-02-08 17:37:29,273 - database.db_connector - [db_connector.py:227] - ERROR - 插入K线数据失败: (1054, "Unknown column 'symbol' in 'field list'")
+2025-02-08 17:37:29,273 - core.market_data - [market_data.py:274] - INFO - 补充 1CAT 进度: 55.6% (5/9批), 已处理 10000 条记录
+2025-02-08 17:37:30,394 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:39:48,182 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:39:48,182 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:39:48,182 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:39:48,183 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:39:48,424 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:39:48,424 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:39:48,424 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:39:48,547 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:39:48,781 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:39:48,782 - core.market_data - [market_data.py:48] - INFO - 交易所API初始化成功
+2025-02-08 17:39:48,783 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:39:49,430 - core.market_data - [market_data.py:223] - INFO - 开始检查 597 个品种的数据状态
+2025-02-08 17:39:49,529 - core.market_data - [market_data.py:110] - INFO - 1CAT 无历史数据，将从 2024-02-09 17:00:00 开始补充
+2025-02-08 17:39:49,529 - core.market_data - [market_data.py:232] - INFO - [1] 开始处理 1CAT
+2025-02-08 17:39:49,529 - core.market_data - [market_data.py:259] - INFO - 开始补充 1CAT 历史数据，时间范围: 2024-02-09 17:00:00 -> 2025-02-08 17:00:00
+2025-02-08 17:39:49,529 - core.market_data - [market_data.py:260] - INFO - 预计分 9 批处理，每批最多2000条记录
+2025-02-08 17:39:50,102 - core.market_data - [market_data.py:274] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:39:50,180 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1364, "Field 'id' doesn't have a default value")
+SQL: 
+                INSERT INTO gate_price_30m (
+                    product_code, price_time, `open`, high, 
+                    low, `close`, frame
+                ) VALUES (%s, %s, %s, %s, %s, %s, '30m')
+                ON DUPLICATE KEY UPDATE
+                    `open` = VALUES(`open`),
+                    high = VALUES(high),
+                    low = VALUES(low),
+                    `close` = VALUES(`close`)
+            
+2025-02-08 17:39:50,218 - database.db_connector - [db_connector.py:226] - ERROR - 插入K线数据失败: (1364, "Field 'id' doesn't have a default value")
+2025-02-08 17:39:50,218 - core.market_data - [market_data.py:284] - INFO - 补充 1CAT 进度: 11.1% (1/9批), 已处理 2000 条记录
+2025-02-08 17:39:51,510 - core.market_data - [market_data.py:274] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:39:51,587 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1364, "Field 'id' doesn't have a default value")
+SQL: 
+                INSERT INTO gate_price_30m (
+                    product_code, price_time, `open`, high, 
+                    low, `close`, frame
+                ) VALUES (%s, %s, %s, %s, %s, %s, '30m')
+                ON DUPLICATE KEY UPDATE
+                    `open` = VALUES(`open`),
+                    high = VALUES(high),
+                    low = VALUES(low),
+                    `close` = VALUES(`close`)
+            
+2025-02-08 17:39:51,625 - database.db_connector - [db_connector.py:226] - ERROR - 插入K线数据失败: (1364, "Field 'id' doesn't have a default value")
+2025-02-08 17:39:51,625 - core.market_data - [market_data.py:284] - INFO - 补充 1CAT 进度: 22.2% (2/9批), 已处理 4000 条记录
+2025-02-08 17:39:52,913 - core.market_data - [market_data.py:274] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:39:52,990 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1364, "Field 'id' doesn't have a default value")
+SQL: 
+                INSERT INTO gate_price_30m (
+                    product_code, price_time, `open`, high, 
+                    low, `close`, frame
+                ) VALUES (%s, %s, %s, %s, %s, %s, '30m')
+                ON DUPLICATE KEY UPDATE
+                    `open` = VALUES(`open`),
+                    high = VALUES(high),
+                    low = VALUES(low),
+                    `close` = VALUES(`close`)
+            
+2025-02-08 17:39:53,028 - database.db_connector - [db_connector.py:226] - ERROR - 插入K线数据失败: (1364, "Field 'id' doesn't have a default value")
+2025-02-08 17:39:53,028 - core.market_data - [market_data.py:284] - INFO - 补充 1CAT 进度: 33.3% (3/9批), 已处理 6000 条记录
+2025-02-08 17:39:54,315 - core.market_data - [market_data.py:274] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:39:54,391 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1364, "Field 'id' doesn't have a default value")
+SQL: 
+                INSERT INTO gate_price_30m (
+                    product_code, price_time, `open`, high, 
+                    low, `close`, frame
+                ) VALUES (%s, %s, %s, %s, %s, %s, '30m')
+                ON DUPLICATE KEY UPDATE
+                    `open` = VALUES(`open`),
+                    high = VALUES(high),
+                    low = VALUES(low),
+                    `close` = VALUES(`close`)
+            
+2025-02-08 17:39:54,429 - database.db_connector - [db_connector.py:226] - ERROR - 插入K线数据失败: (1364, "Field 'id' doesn't have a default value")
+2025-02-08 17:39:54,429 - core.market_data - [market_data.py:284] - INFO - 补充 1CAT 进度: 44.4% (4/9批), 已处理 8000 条记录
+2025-02-08 17:39:55,713 - core.market_data - [market_data.py:274] - WARNING - 1CAT 单批数据量超过2000条: 2001
+2025-02-08 17:39:55,790 - database.db_connector - [db_connector.py:89] - ERROR - 更新执行失败: (1364, "Field 'id' doesn't have a default value")
+SQL: 
+                INSERT INTO gate_price_30m (
+                    product_code, price_time, `open`, high, 
+                    low, `close`, frame
+                ) VALUES (%s, %s, %s, %s, %s, %s, '30m')
+                ON DUPLICATE KEY UPDATE
+                    `open` = VALUES(`open`),
+                    high = VALUES(high),
+                    low = VALUES(low),
+                    `close` = VALUES(`close`)
+            
+2025-02-08 17:39:55,828 - database.db_connector - [db_connector.py:226] - ERROR - 插入K线数据失败: (1364, "Field 'id' doesn't have a default value")
+2025-02-08 17:39:55,828 - core.market_data - [market_data.py:284] - INFO - 补充 1CAT 进度: 55.6% (5/9批), 已处理 10000 条记录
+2025-02-08 17:39:55,909 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...
+2025-02-08 17:42:37,053 - QuotesService - [quotes_service.py:52] - INFO - === 行情服务启动 ===
+2025-02-08 17:42:37,053 - QuotesService - [quotes_service.py:53] - INFO - 当前工作目录: D:\pythonProject\CK\new_proj\src
+2025-02-08 17:42:37,053 - QuotesService - [quotes_service.py:54] - INFO - Python路径: ['D:\\pythonProject\\CK\\gate_api', 'D:\\pythonProject\\CK\\COMM', 'D:\\pythonProject\\CK\\BASECLASS', 'D:\\pythonProject\\CK\\new_proj', 'D:\\pythonProject\\CK\\new_proj\\src', 'D:\\pythonProject\\CK', 'D:\\Python310\\python310.zip', 'D:\\Python310\\DLLs', 'D:\\Python310\\lib', 'D:\\Python310', 'D:\\pythonProject\\CK\\enve', 'D:\\pythonProject\\CK\\enve\\lib\\site-packages']
+2025-02-08 17:42:37,054 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:42:37,296 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:42:37,296 - QuotesService - [quotes_service.py:60] - INFO - 正在启动行情管理器...
+2025-02-08 17:42:37,296 - core.quotes_manager - [quotes_manager.py:43] - INFO - 启动行情服务...
+2025-02-08 17:42:37,448 - database.db_connector - [db_connector.py:29] - INFO - 正在初始化数据库连接，数据源: 1
+2025-02-08 17:42:37,684 - database.db_connector - [db_connector.py:56] - INFO - 数据库连接初始化成功
+2025-02-08 17:42:37,684 - core.market_data - [market_data.py:48] - INFO - 交易所API初始化成功
+2025-02-08 17:42:37,685 - QuotesService - [quotes_service.py:64] - INFO - 行情服务启动成功
+2025-02-08 17:42:38,449 - core.market_data - [market_data.py:228] - INFO - 开始检查 597 个品种的数据状态
+2025-02-08 17:42:38,534 - core.market_data - [market_data.py:110] - INFO - 1CAT 无历史数据，将从 2024-02-09 17:00:00 开始补充
+2025-02-08 17:42:38,534 - core.market_data - [market_data.py:237] - INFO - [1] 开始处理 1CAT
+2025-02-08 17:42:38,534 - core.market_data - [market_data.py:264] - INFO - 开始补充 1CAT 历史数据，时间范围: 2024-02-09 17:00:00 -> 2025-02-08 17:00:00
+2025-02-08 17:42:38,534 - core.market_data - [market_data.py:265] - INFO - 预计分 9 批处理，每批最多2000条记录
+2025-02-08 17:42:38,791 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 17:47:00,515 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 11.1% (1/9批), 已处理 2000 条记录
+2025-02-08 17:47:02,066 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 17:51:22,010 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 22.2% (2/9批), 已处理 4000 条记录
+2025-02-08 17:51:23,694 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 17:55:44,385 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 33.3% (3/9批), 已处理 6000 条记录
+2025-02-08 17:55:46,072 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 18:00:14,158 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 44.4% (4/9批), 已处理 8000 条记录
+2025-02-08 18:00:15,747 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 18:04:25,321 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 55.6% (5/9批), 已处理 10000 条记录
+2025-02-08 18:04:26,894 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 18:08:34,727 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 66.7% (6/9批), 已处理 12000 条记录
+2025-02-08 18:08:36,429 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 18:12:40,210 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 77.8% (7/9批), 已处理 14000 条记录
+2025-02-08 18:12:42,272 - core.market_data - [market_data.py:166] - INFO - 1CAT 返回数据量 2001 条，截取前2000条
+2025-02-08 18:16:51,085 - core.market_data - [market_data.py:289] - INFO - 补充 1CAT 进度: 88.9% (8/9批), 已处理 16000 条记录
+2025-02-08 18:18:40,224 - QuotesService - [quotes_service.py:69] - INFO - 收到退出信号，正在停止服务...

@@ -1,0 +1,23 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <value>
+          <list size="10">
+            <item index="0" class="java.lang.String" itemvalue="numba" />
+            <item index="1" class="java.lang.String" itemvalue="vector_quantize_pytorch" />
+            <item index="2" class="java.lang.String" itemvalue="transformers" />
+            <item index="3" class="java.lang.String" itemvalue="gradio" />
+            <item index="4" class="java.lang.String" itemvalue="torch" />
+            <item index="5" class="java.lang.String" itemvalue="pybase16384" />
+            <item index="6" class="java.lang.String" itemvalue="vocos" />
+            <item index="7" class="java.lang.String" itemvalue="omegaconf" />
+            <item index="8" class="java.lang.String" itemvalue="IPython" />
+            <item index="9" class="java.lang.String" itemvalue="openai" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

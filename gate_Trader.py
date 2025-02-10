@@ -95,16 +95,16 @@ class Trader(object):
             contract = symbol + "_USDT"
             
             try:
-                # 直接设置为全仓模式，不检查当前模式
                 self.exchange.set_dual_mode("usdt", False)  # False 表示全仓模式
             except Exception as e:
-                if "NO_CHANGE" not in str(e):  # 忽略已经是全仓模式的错误
+                if "NO_CHANGE" not in str(e):
                     print(f"设置全仓模式失败: {str(e)}")
             
-            # 设���杠杆倍数
-            self.exchange.update_position_leverage("usdt", contract, min(lever,leverage_max))
+            # 设置杠杆倍数
+            actual_leverage = min(lever, leverage_max)
+            self.exchange.update_position_leverage("usdt", contract, actual_leverage)
 
-            while (total_amt): #分拆下单
+            while (total_amt):  # 分拆下单
                 trade_amt = total_amt
 
                 if trade_amt >= max_size:  # 最大交易数量
@@ -112,19 +112,45 @@ class Trader(object):
 
                 total_amt = total_amt - trade_amt
 
-                if amt>0:
+                if amt > 0:
                     coin_num = trade_amt
+                    side = 'buy'
                 else:
                     coin_num = -1 * trade_amt
+                    side = 'sell'
 
                 order = FuturesOrder(contract=contract, size=coin_num, price="0", tif='ioc')
-                order = self.exchange.create_futures_order("usdt",order)
+                order = self.exchange.create_futures_order("usdt", order)
+                
                 if order.status == 'finished':
-                    print('交易成功：', symbol + "_USDT", "差距为:", coin_num,  time.strftime('%y-%m-%d %H:%M:%S'))
+                    print('交易成功：', contract, "数量:", coin_num, time.strftime('%y-%m-%d %H:%M:%S'))
+                    
+                    # 记录交易信息
+                    try:
+                        trade_record = {
+                            'acct_id': self.current_account_id,
+                            'symbol': symbol,
+                            'side': side,
+                            'size': abs(coin_num),
+                            'price': float(order.fill_price),
+                            'leverage': actual_leverage,
+                            'trade_time': datetime.datetime.now(),
+                            'order_id': order.id,
+                            'trade_value': float(order.fill_price) * abs(coin_num) * coin_info['cs'],
+                            'fee': 0.0,  # 简化处理，手续费直接记为0
+                            'remark': f"Strategy trade: {side.upper()}"
+                        }
+                        
+                        self.dc.InsertTradeRecord(trade_record)
+                        
+                    except Exception as e:
+                        print(f"记录交易信息失败: {str(e)}")
+                        self.log_error(e, "记录交易信息失败")
 
         except Exception as e:
-            print(symbol,amt)
+            print(f"交易失败 {symbol} {amt}: {str(e)}")
             self.ExceptionThrow(e)
+
     def AcctSynch(self):
         try:
             print("\n #################### \n 再平衡检测程序开始运行...")
@@ -211,7 +237,7 @@ class Trader(object):
                     if timedelta.total_seconds() > int(self.timeout):
                         remote_dc.UpdateWatchAppBack("future_cta_gateio")
                         self.SendWarning()
-                        print(f"主服务器超时 {timedelta.total_seconds()}秒，备份服务器接管")
+                        print(f"主服务器超时 {timedelta.total_seconds()}秒，备份���务器接管")
                         return True
                         
                     print(f"主务器运行正常，最后更新时间：{dt2}")
@@ -283,6 +309,9 @@ class Trader(object):
         处理单个账户的同步交易
         """
         try:
+            # 设置当前账户ID
+            self.current_account_id = acct['acct_id']
+            
             obj = ExchangeGatieio()
             acctdata = self.dc.QueryGateAcctInfoByID(acct['acct_id'])
 
@@ -503,7 +532,7 @@ def setup_schedule():
         print("定时任务设置成功")
         
     except Exception as e:
-        print(f"设置定时任务失败: {str(e)}")
+        print(f"设置定时任务失��: {str(e)}")
         raise e
 
 def run_job_with_timeout(job_func, timeout=300):

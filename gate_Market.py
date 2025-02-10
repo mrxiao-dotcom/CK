@@ -393,7 +393,7 @@ class MarketInfo(object):
     def ShowStgLatestInfo(self):
         data_list = []
         if len(self.product_value)==0:
-            print("no data, 请先运行策略运算")
+            print("no data, 请先运行策略算")
         else:
             for itor in self.product_value:
                 data = [itor['symbol'],itor['stg'],itor['profit'],itor['max'],itor['rate'],itor['drawdown']]
@@ -580,23 +580,52 @@ class MyApplication:
         position_frame = ttk.LabelFrame(self.window, text="持仓信息", padding=5)
         position_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
         
-        # 创建表格
-        columns = ("序号","名称", "杠杆倍数", "数量", "净值", "浮盈")
-        self.tree = ttk.Treeview(position_frame, columns=columns, show="headings")
+        # 创建左右分隔的框架
+        split_frame = ttk.Frame(position_frame)
+        split_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # 左侧持仓信息
+        left_frame = ttk.Frame(split_frame)
+        left_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        # 创建持仓表格
+        columns = ("序号", "名称", "杠杆倍数", "数量", "净值", "浮盈")
+        self.tree = ttk.Treeview(left_frame, columns=columns, show="headings")
         
         # 设置列
         for col in columns:
             self.tree.heading(col, text=col)
             self.tree.column(col, width=100, anchor="center")
-            
+        
         # 创建滚动条
-        scrollbar = ttk.Scrollbar(position_frame, orient="vertical", command=self.tree.yview)
+        scrollbar = ttk.Scrollbar(left_frame, orient="vertical", command=self.tree.yview)
         self.tree.configure(yscrollcommand=scrollbar.set)
         
         # 放置表格和滚动条
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.tree.pack(fill=tk.BOTH, expand=True)
+        self.tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         
+        # 右侧交易记录
+        right_frame = ttk.Frame(split_frame)
+        right_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=(5, 0))
+        
+        # 创建交易记录表格
+        trade_columns = ("时间", "币种", "方向", "数量", "价格", "价值")
+        self.trade_tree = ttk.Treeview(right_frame, columns=trade_columns, show="headings")
+        
+        # 设置列
+        for col in trade_columns:
+            self.trade_tree.heading(col, text=col)
+            self.trade_tree.column(col, width=80, anchor="center")
+        
+        # 创建滚动条
+        trade_scrollbar = ttk.Scrollbar(right_frame, orient="vertical", command=self.trade_tree.yview)
+        self.trade_tree.configure(yscrollcommand=trade_scrollbar.set)
+        
+        # 放置表格和滚动条
+        trade_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.trade_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
     def update_table(self, data):
         """更新表格数据"""
         # 清空现有数据
@@ -659,7 +688,7 @@ class MyApplication:
         显示账户信息 - 多线程版本
         """
         if not hasattr(self.market, 'exchange') or self.market.exchange is None:
-            messagebox.showwarning("警", "请先选择账户")
+            messagebox.showwarning("警告", "请先选择账户")
             return
         
         # 显示加载动画
@@ -672,7 +701,7 @@ class MyApplication:
         
         # 启动数据获取线程
         thread = threading.Thread(target=self.fetch_account_data)
-        thread.daemon = True  # 设置为守护线程
+        thread.daemon = True
         thread.start()
         
         # 启动数据处理检查
@@ -701,6 +730,8 @@ class MyApplication:
                     self.create_table(account_data)
                     self.create_value_display(fa)
                     self.create_summary(account_data)
+                    # 更新交易记录
+                    self.update_trade_records()
                 else:
                     messagebox.showerror("错误", f"获取数据失败: {data}")
                 
@@ -716,6 +747,7 @@ class MyApplication:
                 self.window.after(100, self.check_data_queue)
         except Exception as e:
             messagebox.showerror("错误", f"处理数据失败: {str(e)}")
+            print("错误", f"处理数据失败: {str(e)}")
             # 恢复按钮状态
             for widget in self.window.winfo_children():
                 if isinstance(widget, ttk.Button):
@@ -740,7 +772,7 @@ class MyApplication:
 
     def create_table_1(self, window):
         # 创建表格控件
-        columns = ("名称", "多空", "最新盈利", "最大盈利","盈利率","最大回撤")
+        columns = ("名称", "多空", "最新盈利", "最大盈利", "盈利率", "最大回撤")
         tree = ttk.Treeview(window, columns=columns, show="headings")
 
         # 定义表头
@@ -794,7 +826,7 @@ class MyApplication:
             self.tree.column("净值", width=100, anchor="center")
             self.tree.column("浮盈", width=100, anchor="center")
 
-        # 插入新数据到表格，包括浮盈信息
+        # 插入新数据到表格，包括浮盈���息
         for index, item in enumerate(data, 1):  # 使用 enumerate 添加序号
             symbol = item[0]
             leverage = item[1]
@@ -878,7 +910,7 @@ class MyApplication:
             self.summary_label.config(text=summary_text)
         else:
             # 计算净值列的总和
-            total_net_value = round(sum(float(item[3]) for item in data), 2)  # 修改这里：总净值四舍五入保留2位小数
+            total_net_value = round(sum(float(item[3]) for item in data), 2)  # 修改这里：总净值��舍五入保留2位小数
             
             # 计算总浮盈（与上面相同的计算逻辑）
             total_pnl = 0
@@ -988,6 +1020,49 @@ class MyApplication:
             self.window.update()
         else:
             self.loading_label.pack_forget()
+
+    def update_trade_records(self):
+        """更新交易记录"""
+        try:
+            if not hasattr(self, 'current_account'):
+                print("未找到当前账户ID")
+                return
+            
+            # 清空现有数据
+            for item in self.trade_tree.get_children():
+                self.trade_tree.delete(item)
+            
+            # 获取7天前的时间
+            seven_days_ago = datetime.datetime.now() - datetime.timedelta(days=7)
+            
+            # 查询交易记录
+            records = self.market.dc.QueryTradeRecords(
+                acct_id=self.current_account,
+                start_time=seven_days_ago
+            )
+            
+            print(f"找到 {len(records)} 条交易记录")  # 添加调试信息
+            
+            # 插入数据
+            for record in records:
+                trade_time = record['trade_time'].strftime('%m-%d %H:%M')
+                direction = "买入" if record['side'] == 'buy' else "卖出"
+                
+                self.trade_tree.insert("", 0, values=(
+                    trade_time,
+                    record['symbol'],
+                    direction,
+                    f"{record['size']:.2f}",
+                    f"{record['price']:.4f}",
+                    f"{record['trade_value']:.2f}"
+                ))
+            
+        except Exception as e:
+            error_msg = f"更新交易记录失败: {str(e)}"
+            print(error_msg)
+            print(f"错误类型: {type(e)}")
+            print(f"错误位置: {e.__traceback__.tb_frame.f_code.co_filename}:{e.__traceback__.tb_lineno}")
+            messagebox.showerror("错误", error_msg)
 
 if __name__ == '__main__':
     # 创建窗口
